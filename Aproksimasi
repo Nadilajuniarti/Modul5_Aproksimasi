@@ -1,0 +1,22 @@
+import numpy as np
+from scipy.interpolate import lagrange
+print("="*60)
+print("IMPLEMENTASI REGRESI LINEAR KUADRAT TERKECIL (LEAST SQUARES REGRESSION)")
+print("="*60)
+
+# input mentah
+x = np.array([10.0, 20.0, 30.0, 40.0], dtype=float)
+y = np.array([82.0, 85.0, 88.0, 92.0], dtype=float)
+
+# menghitung nilai aproksimasi
+a, b = np.polyfit(x, y, 1)
+
+# menghitung nilai yang dicari
+x_target = 25
+y_pred = a * x_target + b
+
+print(f"Nilai data x : {x_target} MB")
+print(f"Nilai data y : {y_pred:.2f} %")
+print(f"Nilai persamaan aproksimasi linear y adalah: a = {a:g}, b = {b:g}")
+print(f"Nilai tingkat akurasi model: {x_target} Mb adalah: {y_pred:.2f}")
+
